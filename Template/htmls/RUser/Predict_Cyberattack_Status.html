@@ -1,0 +1,147 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+        .style7 {
+	color: #FFFF00;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">PREDICTION OF CYBER_ATTACK  TYPE !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="1122" align="center">
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000"><div align="center" class="style7">ENTER ALL DATASETS DETAILS HERE !!! </div></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000"><div align="center"></div></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style7">Enter Fid</span></td>
+                                    <td><input type="text" name="Fid"></td>
+                                    <td bgcolor="#FF0000"><span class="style7">Enter pid</span></td>
+                                    <td><input type="text" name="pid"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style7">Enter ptime</span></td>
+                                    <td><input type="text" name="ptime"></td>
+                                    <td bgcolor="#FF0000"><span class="style7">Enter date_time</span></td>
+                                    <td><input type="text" name="date_time"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style7">Enter src_ip_address</span></td>
+                                    <td><input type="text" name="src_ip_address"></td>
+                                    <td bgcolor="#FF0000"><span class="style7">Enter dst_ip_address</span></td>
+                                    <td><input type="text" name="dst_ip_address"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style7">Enter frame_protos</span></td>
+                                    <td><input type="text" name="frame_protos"></td>
+                                    <td bgcolor="#FF0000"><span class="style7">Enter src_port</span></td>
+                                    <td><input type="text" name="src_port"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style7">Enter dst_port</span></td>
+                                    <td><input type="text" name="dst_port"></td>
+                                    <td bgcolor="#FF0000"><span class="style7">Enter sbytes </span></td>
+                                    <td><input type="text" name="sbytes"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style7">Enter dbytes</span></td>
+                                    <td><input type="text" name="dbytes"></td>
+                                    <td bgcolor="#FF0000"><span class="style7">Enter uid</span></td>
+                                    <td><input type="text" name="uid"></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="287" height="44" bgcolor="#FFFFFF">&nbsp;</td>
+                                    <td width="269">&nbsp;</td>
+                                    <td width="269"><input name="submit" type="submit" class="style1" value="Predict"></td>
+                                    <td width="269">&nbsp;</td>
+                                  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="750" height="56" border="0" align="center" >
+                                    <tr><td width="350" bgcolor="#FF0000"><div align="center"><span class="style6">Detected Cyber_Attack Type</span> :: </div></td>
+
+
+
+                                      <td width="237" bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center"><strong>{{objs}}</strong></div></td>
+                                    </tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

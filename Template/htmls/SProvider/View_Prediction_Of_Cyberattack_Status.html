@@ -1,0 +1,106 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style10 {color: #FFFF00; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+		<div>
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">View Cyberattack Detection Type Details  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                               <table border="5" bordercolor="#FF00FF">
+                               <tr>
+
+                                   <td bgcolor="#FF0000"><span class="style8 style6">Fid</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">pid</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">ptime</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">date_time</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">src_ip_address</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">dst_ip_address</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">frame_protos</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">src_port</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">dst_port</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">sbytes</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">dbytes</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">uid</span></td>
+<td bgcolor="#FF0000"><span class="style8 style6">Prediction</span></td>
+
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+
+                          <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Fid}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.pid}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.ptime}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.date_time}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.src_ip_address}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.dst_ip_address}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.frame_protos}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.src_port}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.dst_port}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.sbytes}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.dbytes}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.uid}}</td>
+ <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Prediction}}</td>
+
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
